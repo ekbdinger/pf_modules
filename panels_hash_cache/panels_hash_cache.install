@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file views.install
+ * Contains install and update functions for Advanced Panels Cache.
+ */
+
+function panels_hash_cache_install() {
+  drupal_install_schema('panels_hash_cache');
+}
+
+function panels_hash_cache_uninstall() {
+  drupal_uninstall_schema('panels_hash_cache');
+}
+
+/**
+ * Implementation of hook_schemea
+ */
+function panels_hash_cache_schema() {
+  $schema['panels_hash_cache'] = drupal_get_schema_unprocessed('system', 'cache');
+  return $schema; 
+}
